@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300;400;500;600;700");
+
+:root{
+  --bright_orange   : hsl(31, 77%, 52%);
+  --dark_cyn   : hsl(184, 100%, 22%);
+  --very_dark_cyan : hsl(179, 100%, 13%);
+  --transparent_white : hsla(0, 0%, 100%, 0.75);
+  --very_light_gray : hsl(0, 0%, 95%);
+
+  /* Font */
+  --font-primary      : "Big Shoulders Display", sans-serif;
+  --font-secondary      : "Lexend Deca", sans-serif;
+  --font-weight-light : 300;
+  --font-weight-reg   : 400;
+  --font-weight-med   : 500;
+  --font-weight-bold  : 600;
+  --font-weight-heavy : 700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:  var(--font-primary), var(--font-secondary), sans-serif;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 200px;
+  padding: 0 0;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+  /* margin: 0 -5px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+	left: 0;right: 0;top: 0;bottom: 0;
+	margin: auto;
+  text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); this adds the "card" effect */
+  padding: 30px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: start;
+  width: 100%;
+  /* background-color: #f1f1f1; */
+}
+
+.card-title {
+  color: var(--very_light_gray);
+  font-family: var(--font-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 100%;
+  /* padding: 0 15px; */
+}
+
+.card-content {
+  color: var(--transparent_white);
+  font-family: var(--font-secondary);
+  text-align: start;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 20px;
+  /* padding: 0 15px; */
+}
+
+.btn {
+  width: 100px;
+  padding: 10px;
+  border: 1px solid var(--very_light_gray);
+  border-radius: 20px;
+  margin-top: 30%;
+  text-decoration: none;
+  color: var(--very_light_gray);
+  text-align: center;
+  font-family: var(--font-secondary);
+  font-size: 10px;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 375px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
